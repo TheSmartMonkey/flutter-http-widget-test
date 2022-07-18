@@ -1,6 +1,6 @@
-# fluttertest
+# flutter-http-widget-test
 
-A new Flutter project.
+Simple exemple of how to test a http request in a widget test on a button click
 
 ## Getting Started
 
