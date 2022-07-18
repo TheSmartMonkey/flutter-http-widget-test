@@ -2,6 +2,12 @@
 
 Simple exemple of how to test a http request in a widget test on a button click
 
+## Installation
+
+```sh
+npx degit https://github.com/TheSmartMonkey/flutter-http-widget-test app
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
