@@ -13,9 +13,13 @@ void main() {
 
   testWidgets('Should display api text on button click',
       (WidgetTester tester) async {
+    // Given
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+      MyApp(client: mockJsonPlaceholderService),
+    );
 
+    // When
     // Stub http request
     final json = {
       "userId": 1,
@@ -34,7 +38,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.pump(const Duration(seconds: 2));
 
-    // The text is displayed
+    // Then
     verify(() => mockJsonPlaceholderService.getPlaceholder()).called(1);
     expect(find.text('delectus aut autem'), findsOneWidget);
   });

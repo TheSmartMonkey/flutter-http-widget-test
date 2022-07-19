@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertest/home.dart';
+import 'package:fluttertest/json_placeholder_service.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(client: JsonPlaceholderService()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final JsonPlaceholderService client;
+
+  const MyApp({Key? key, required this.client}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+        title: 'Flutter Demo Home Page',
+        client: client,
+      ),
     );
   }
 }

@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:fluttertest/json_placeholder_service.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
   final String title;
+  final JsonPlaceholderService client;
+
+  const MyHomePage({
+    Key? key,
+    required this.title,
+    required this.client,
+  }) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -14,8 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String text = '';
 
   Future<void> _onPressed() async {
-    // await JsonPlaceholderService().sleep();
-    final response = await JsonPlaceholderService().getPlaceholder();
+    final response = await widget.client.getPlaceholder();
     setState(() {
       text = response.title;
     });

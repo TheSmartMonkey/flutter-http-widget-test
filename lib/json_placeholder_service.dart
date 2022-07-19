@@ -11,8 +11,4 @@ class JsonPlaceholderService {
     final JsonPlaceholderModel json = JsonPlaceholderModel.fromJson(data);
     return json;
   }
-
-  Future<void> sleep() async {
-    Future<void>.delayed(const Duration(hours: 8));
-  }
 }
