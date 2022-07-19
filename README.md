@@ -2,6 +2,8 @@
 
 Simple exemple of how to test a http request in a widget test on a button click
 
+this repo is related to this  stack overflow post : https://stackoverflow.com/questions/73015849/how-to-spyon-stub-an-http-request-in-a-flutter-widget-test/73043721#73043721
+
 ## Installation
 
 ```sh
