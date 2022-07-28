@@ -14,10 +14,8 @@ void main() {
   testWidgets('Should display api text on button click',
       (WidgetTester tester) async {
     // Given
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(
-      MyApp(client: mockJsonPlaceholderService),
-    );
+    getIt.registerSingleton<JsonPlaceholderService>(mockJsonPlaceholderService);
+    await tester.pumpWidget(const MyApp());
 
     // When
     // Stub http request
